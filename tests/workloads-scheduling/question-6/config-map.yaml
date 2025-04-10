@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: space-system
+data:
+  system.conf: |
+    planet=blue
+    moon=white
