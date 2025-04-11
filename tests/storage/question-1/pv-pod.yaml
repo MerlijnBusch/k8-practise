@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pv-pod
+  name: pv-pod
+spec:
+  containers:
+  - image: busybox:latest
+    name: pv-pod
+    args:
+      - sleep
+      - "3600"
+    volumeMounts:
+    - name: data
+      mountPath: "/data"
+  volumes:
+  - name: data
+    hostPath:
+      path: "/home/ubuntu/data/"
